@@ -1,0 +1,21 @@
+<% include ./partial/header %> <% include ./partial/principalfunction%>
+
+
+<div class="col-sm-6" style="    flex: 0 0 50%;
+max-width: 50%;
+margin-left: 431px;
+margin-top: -251px;border: 1px solid pink ;  text-align: -webkit-center;">
+      <div class="thumbnail">
+        <img style="height:150px;width:150px;border-radius: 100%" src="/<%=principal.image%>" />
+        <h1><strong>Name:</strong> <%=principal.name%></h1>
+        <h4><strong>Type:</strong><%=principal.type%></h4>
+
+        <h4>Username: <%=principal.username%></h4>
+        <h4>Hostel:<%=principal.hostel%></h4>
+      </div>
+      <a class="btn btn-warning" href="/principal/<%=principal._id%>/edit">Edit</a>
+    </div>
+  </div>
+</div>
+
+<% include ./partial/footer %>

@@ -1,0 +1,56 @@
+<% include ./partial/header %>
+<div
+  class="col-sm-9"
+  style="margin: 50px 125px;    text-align: -webkit-center; "
+>
+  <form
+    action="/warden/<%=warden.id%>/leave/<%=student.id%>/info"
+    method="POST"
+  >
+    <div
+      class="container-fluid bg-3 text-center"
+      style="border: 1px solid blue"
+    >
+      <h1><%=student.name %></h1>
+      <br />
+      <div class="row">
+        <div class="col-sm-4">
+          <img
+            style="height:150px;width:150px;border-radius: 100%"
+            src="/<%=student.image%>"
+            alt="image"
+          />
+        </div>
+        <%student.leaves.forEach(function(leave){%>
+        <div class="col-sm-4">
+          <h3><strong> Subject:</strong><%=leave.subject %></h3>
+          <h3>Status:<%=leave.wardenstatus %></h3>
+          <h3>From:<%=moment(leave.from).format('DD/MM/YYYY') %></h3>
+          <h3>To:<%=moment(leave.to).format('DD/MM/YYYY') %></h3>
+          <h3><%=leave.days%></h3>
+          <h3>Hostel:<%=student.hostel%></h3>
+          <h3>Department:<%=student.department %></h3>
+          <h3>Attendance :<%=leave.percentage %></h3>
+
+          <div style="float:inherit">
+            <input
+              type="submit"
+              class="btn btn-block btn-success"
+              name="action"
+              value="Approve"
+            />
+            <input
+              type="submit"
+              class="btn btn-block btn-danger"
+              name="action"
+              value="Decline"
+            />
+          </div>
+        </div>
+
+        <%})%>
+      </div>
+    </div>
+  </form>
+</div>
+<% include ./partial/footer %>

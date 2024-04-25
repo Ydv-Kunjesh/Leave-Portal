@@ -1,0 +1,166 @@
+<% include ./partial/header %>
+<div class="lop"style="border:1px solid pink;">
+    <% if (locals.errors) { %>
+      <div class="alert alert-danger" role="alert"style="">
+        <% locals.errors.forEach(function(errors) { %>
+        <h5><%= errors.msg %></h5>
+
+        <% }); %>
+      </div>
+      <% } %>
+</div>
+<div
+  class="container"
+  style=" position: relative;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 60px 0 30px 0;
+width: 40%;
+margin-top: 60px">
+
+        
+
+        <form action="/student/register" method="POST"  enctype="multipart/form-data">
+          <div class="row">
+            <div class="col">
+              <h2 style="text-align: center; margin-top: 0px">
+                Register
+              </h2>
+              <div class="form-group form-inline">
+                <label for="name" style="width: 200px;
+                display: inline-block;
+                text-align: right;
+                ">Name &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="name"
+                  placeholder="name"
+                  name="name"
+                  style="float: left;;
+                  text-align: left;
+                  "
+                />
+              </div>
+              
+              <div id="rates" class="form-group"style="width: 400px;
+              display: inline-block;
+              text-align: center;
+              ">
+                <input type="radio" id="r1" name="type" value="student" />
+                Student
+               
+              </div>
+
+              
+              <div class="form-group form-inline">
+                  <label for="username" style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Email_Id&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="username"
+                  placeholder="Email_Id"
+                  name="username"
+                />
+              </div>
+             
+              <div class="form-group form-inline">
+                  <label for="password"style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Password &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="password"
+                />
+              </div>
+             
+              <div class="form-group form-inline">
+                  <label for="cpassword"style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Confirm Password&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <input
+                  class="form-control"
+                  type="password"
+                  id="cpassword"
+                  name="password2"
+                  placeholder="Confirm password"
+                />
+              </div>
+            
+              <div class="form-group form-inline">
+                  <label for="department"style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Trade &nbsp;&nbsp;&nbsp;&nbsp;</label>
+               
+                <input
+                  class="form-control"
+                  
+                  type="text"
+                  placeholder="Trade"
+                  id="department"
+                  name="department"
+                />
+              </div>
+              
+              <div class="form-group form-inline">
+                  <label for="hostel"style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Hostel &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                
+                <input
+                  class="form-control"
+                  type="text"
+                  name="hostel"
+                  id="hostel"
+                  value="yes" fixed 
+                  placeholder="Hostel" 
+                />
+              </div>
+
+          
+            
+              <div class="form-group form-inline">
+                  <label for="img"style="width: 200px;
+                  display: inline-block;
+                  text-align: right;
+                  ">Image&nbsp;&nbsp;&nbsp;&nbsp; </label>
+                <input
+                  class="form-control"
+                  type="file"
+                  id="img"
+                  placeholder="img"
+                  name="image"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary btn-default btn-block"
+                  style=" color:#fff;"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        
+        </form>
+
+        <a href="/">Back</a>
+      </div>
+    </div>
+  </div>
+  <% include ./partial/footer %>
+</div>
